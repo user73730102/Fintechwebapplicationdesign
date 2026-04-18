@@ -72,17 +72,17 @@ export function AgentSession() {
                 AI Agent
               </span>
               <div className="bg-white border border-slate-200 p-4 rounded-2xl rounded-tl-none text-sm text-slate-700 shadow-sm leading-relaxed">
-                Hello John. Could you verify your current
+                Hello Arjun. Could you verify your current
                 address?
               </div>
             </div>
 
             <div className="flex flex-col gap-1.5 items-end ml-auto max-w-[85%]">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1">
-                Customer (John)
+                Customer (Arjun)
               </span>
               <div className="bg-blue-600 text-white p-4 rounded-2xl rounded-tr-none text-sm shadow-sm leading-relaxed">
-                Yes, it's 123 Main Street, Springfield.
+                Yes, it's Sector 5, Baner, Pune.
               </div>
             </div>
 
@@ -91,7 +91,7 @@ export function AgentSession() {
                 AI Agent
               </span>
               <div className="bg-white border border-slate-200 p-4 rounded-2xl rounded-tl-none text-sm text-slate-700 shadow-sm leading-relaxed">
-                Got it. I see you're applying for a $50,000
+                Got it. I see you're applying for a ₹10,00,000
                 personal loan. What is the primary purpose of
                 this loan?
               </div>
@@ -99,7 +99,7 @@ export function AgentSession() {
 
             <div className="flex flex-col gap-1.5 items-end ml-auto max-w-[85%]">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1">
-                Customer (John)
+                Customer (Arjun)
               </span>
               <div className="bg-slate-200 animate-pulse w-24 h-10 rounded-2xl rounded-tr-none" />
             </div>
@@ -179,7 +179,7 @@ export function AgentSession() {
                     Full Name
                   </span>
                   <span className="font-medium text-slate-900 text-base">
-                    John Doe
+                    Arjun Mehta
                   </span>
                 </div>
                 <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex flex-col gap-1">
@@ -190,7 +190,7 @@ export function AgentSession() {
                     </span>
                   </span>
                   <span className="font-medium text-slate-900 text-base">
-                    Drivers License verified
+                    Aadhaar Card verified
                   </span>
                 </div>
                 <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex flex-col gap-1">
@@ -198,7 +198,7 @@ export function AgentSession() {
                     Address
                   </span>
                   <span className="font-medium text-slate-900 text-base">
-                    123 Main St, Springfield
+                    Sector 5, Baner, Pune
                   </span>
                 </div>
                 <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex flex-col gap-1">
@@ -206,7 +206,7 @@ export function AgentSession() {
                     Est. Income
                   </span>
                   <span className="font-medium text-slate-900 text-base">
-                    $120,000/yr
+                    ₹18,00,000/yr
                   </span>
                 </div>
                 <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex flex-col gap-1 border-blue-200 ring-1 ring-blue-500/10">
@@ -239,7 +239,7 @@ export function AgentSession() {
                     Intent Classification
                   </h4>
                   <p className="text-sm text-slate-700 bg-white p-3 rounded-lg border border-slate-100 shadow-sm">
-                    Identified goal: Personal Loan ($50,000) for
+                    Identified goal: Personal Loan (₹10,00,000) for
                     "Home Renovation". Next required data point:
                     Income Verification.
                   </p>
@@ -266,9 +266,9 @@ export function AgentSession() {
                     Context Aggregation
                   </h4>
                   <p className="text-sm text-slate-700 bg-white p-3 rounded-lg border border-slate-100 shadow-sm">
-                    Querying internal CRM. Customer has a
-                    checking account opened in 2018 with average
-                    balance of $12,500.
+                    Querying internal CBS. Customer has a
+                    savings account opened in 2018 with average
+                    balance of ₹1,25,000.
                   </p>
                 </div>
               </div>
@@ -294,8 +294,8 @@ export function AgentSession() {
                     </h4>
                     <p className="text-sm text-amber-700 leading-relaxed mb-4">
                       The user's IP address indicates they are
-                      50 miles away from their stated home
-                      address in Springfield.
+                      150 km away from their stated home
+                      address in Pune.
                     </p>
                     <div className="flex gap-3">
                       <Button

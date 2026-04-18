@@ -7,10 +7,10 @@ export function AgentDashboard() {
   const navigate = useNavigate();
 
   const sessions = [
-    { id: "8892-XT", name: "John Doe", type: "Personal Loan", status: "active", risk: "low", time: "04:12" },
-    { id: "4421-AB", name: "Sarah Smith", type: "Credit Card", status: "active", risk: "high", time: "12:45" },
-    { id: "9910-KL", name: "Michael Chen", type: "Mortgage", status: "waiting", risk: "medium", time: "00:00" },
-    { id: "2204-ZX", name: "Emma Wilson", type: "Auto Loan", status: "active", risk: "low", time: "08:30" },
+    { id: "8892-XT", name: "Arjun Mehta", type: "Personal Loan", status: "active", risk: "low", time: "04:12" },
+    { id: "4421-AB", name: "Vikram Iyer", type: "Business Credit", status: "active", risk: "high", time: "12:45" },
+    { id: "9910-KL", name: "Priya Sharma", type: "Home Loan", status: "waiting", risk: "medium", time: "00:00" },
+    { id: "2204-ZX", name: "Rajat Gupta", type: "Two Wheeler Loan", status: "active", risk: "low", time: "08:30" },
   ];
 
   return (

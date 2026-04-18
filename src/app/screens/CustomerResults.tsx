@@ -27,7 +27,7 @@ export function CustomerResults() {
             <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Application Results</h1>
             <p className="text-slate-500 mt-1 flex items-center gap-2">
               <FileCheck className="w-4 h-4 text-emerald-500" />
-              Verified & Approved via AI Check
+              Verified & Approved via Aadhaar e-KYC
             </p>
           </div>
           <Button variant="outline" className="gap-2">
@@ -49,17 +49,17 @@ export function CustomerResults() {
               <CardContent className="pt-6 space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xl">
-                    JD
+                    AM
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-900">John Doe</h3>
-                    <p className="text-sm text-slate-500">ID: XXX-XX-1234</p>
+                    <h3 className="font-semibold text-slate-900">Arjun Mehta</h3>
+                    <p className="text-sm text-slate-500">Aadhaar: XXXX-XXXX-1234</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4 text-sm pt-4 border-t border-slate-100">
                   <div>
                     <span className="text-slate-500 block mb-1">Income</span>
-                    <span className="font-medium">$120,000/yr</span>
+                    <span className="font-medium">₹18,00,000/yr</span>
                   </div>
                   <div>
                     <span className="text-slate-500 block mb-1">Employment</span>
@@ -118,7 +118,7 @@ export function CustomerResults() {
               <CardContent className="space-y-3 text-sm">
                 <div className="flex items-start gap-3">
                   <CheckCircleIcon className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                  <p className="text-slate-700">Face match confirmed against gov database.</p>
+                  <p className="text-slate-700">Face match confirmed against UIDAI database.</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircleIcon className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
@@ -126,7 +126,7 @@ export function CustomerResults() {
                 </div>
                 <div className="flex items-start gap-3">
                   <AlertTriangle className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
-                  <p className="text-amber-800 font-medium">Device location differs from home address by 50 miles. (Flagged for agent review)</p>
+                  <p className="text-amber-800 font-medium">Device location differs from home address (Pune) by 150 km. (Flagged for agent review)</p>
                 </div>
               </CardContent>
             </Card>
@@ -139,29 +139,29 @@ export function CustomerResults() {
                 <Badge variant="default" className="bg-white/20 hover:bg-white/30 text-white mb-4 border-none backdrop-blur-md">
                   Pre-Approved Offer
                 </Badge>
-                <h2 className="text-4xl font-extrabold mb-2">Up to $50,000</h2>
-                <p className="text-blue-100 text-lg">Personal Loan at 5.5% APR</p>
+                <h2 className="text-4xl font-extrabold mb-2">Up to ₹10,00,000</h2>
+                <p className="text-blue-100 text-lg">Personal Loan at 10.5% APR</p>
               </div>
               <CardContent className="p-8">
                 <div className="space-y-8">
                   <div>
                     <div className="flex justify-between items-end mb-4">
-                      <h3 className="font-semibold text-slate-900 text-lg">What-if Simulator</h3>
-                      <span className="text-2xl font-bold text-blue-600">${loanAmount.toLocaleString()}</span>
+                      <h3 className="font-semibold text-slate-900 text-lg">Smart Offer Simulator</h3>
+                      <span className="text-2xl font-bold text-blue-600">₹{loanAmount.toLocaleString('en-IN')}</span>
                     </div>
                     
                     <input 
                       type="range" 
-                      min="1000" 
-                      max="50000" 
-                      step="500"
+                      min="50000" 
+                      max="1000000" 
+                      step="10000"
                       value={loanAmount}
                       onChange={(e) => setLoanAmount(Number(e.target.value))}
                       className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
                     />
                     <div className="flex justify-between text-xs text-slate-400 mt-2">
-                      <span>$1,000</span>
-                      <span>$50,000</span>
+                      <span>₹50,000</span>
+                      <span>₹10,00,000</span>
                     </div>
                   </div>
 
@@ -175,9 +175,9 @@ export function CustomerResults() {
                           </linearGradient>
                         </defs>
                         <XAxis dataKey="term" tickFormatter={(v) => `${v}mo`} axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} />
-                        <YAxis axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} tickFormatter={(v) => `$${v.toFixed(0)}`} />
+                        <YAxis axisLine={false} tickLine={false} tick={{fill: '#64748b', fontSize: 12}} tickFormatter={(v) => `₹${(v/1000).toFixed(0)}k`} />
                         <Tooltip 
-                          formatter={(value: number) => [`$${value.toFixed(2)}`, "Monthly Payment"]}
+                          formatter={(value: number) => [`₹${value.toLocaleString('en-IN', { maximumFractionDigits: 0 })}`, "Monthly Payment"]}
                           labelFormatter={(label) => `${label} Months`}
                           contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                         />
@@ -213,19 +213,19 @@ export function CustomerResults() {
                     <div className="flex flex-col items-start">
                       <span className="text-xs font-semibold text-blue-600 mb-1">AI Agent</span>
                       <div className="bg-white border border-slate-200 rounded-2xl rounded-tl-none px-4 py-2 text-sm text-slate-700 shadow-sm">
-                        Hello! Let's start by verifying your identity. Could you please show your ID to the camera?
+                        Hello! Let's start by verifying your identity. Could you please show your Aadhaar card to the camera?
                       </div>
                     </div>
                     <div className="flex flex-col items-end">
                       <span className="text-xs font-semibold text-slate-500 mb-1">Customer</span>
                       <div className="bg-blue-600 text-white rounded-2xl rounded-tr-none px-4 py-2 text-sm shadow-sm">
-                        Sure, here is my driver's license.
+                        Sure, here is my Aadhaar card.
                       </div>
                     </div>
                     <div className="flex flex-col items-start">
                       <span className="text-xs font-semibold text-blue-600 mb-1">AI Agent</span>
                       <div className="bg-white border border-slate-200 rounded-2xl rounded-tl-none px-4 py-2 text-sm text-slate-700 shadow-sm">
-                        Thank you. I've captured that. Your identity is verified.
+                        Thank you. I've captured that. Your Aadhaar e-KYC is verified.
                       </div>
                     </div>
                   </div>

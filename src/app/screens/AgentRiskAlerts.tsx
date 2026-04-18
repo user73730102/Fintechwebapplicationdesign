@@ -7,30 +7,30 @@ export function AgentRiskAlerts() {
     {
       id: "RA-901",
       session: "8892-XT",
-      customer: "John Doe",
+      customer: "Arjun Mehta",
       type: "Geolocation Mismatch",
       severity: "high",
-      description: "User IP resolves to Dallas, TX but stated home address is Chicago, IL (250+ miles discrepancy).",
+      description: "User IP resolves to Mumbai, MH but stated home address is Pune, MH (150+ km discrepancy).",
       icon: MapPin,
       time: "2 mins ago"
     },
     {
       id: "RA-902",
       session: "4421-AB",
-      customer: "Sarah Smith",
+      customer: "Priya Sharma",
       type: "Synthetic ID Probability",
       severity: "high",
-      description: "SSN issued recently (2021) compared to stated DOB. Face match score borderlining 82% threshold.",
+      description: "PAN Card linked recently compared to stated credit history. Face match score borderlining 82% threshold.",
       icon: Fingerprint,
       time: "15 mins ago"
     },
     {
       id: "RA-903",
       session: "9910-KL",
-      customer: "Michael Chen",
+      customer: "Rajat Gupta",
       type: "Watchlist Partial Match",
       severity: "medium",
-      description: "Name matched 75% on secondary PEP database. Requires manual secondary document verification.",
+      description: "Name matched 75% on CIBIL PEP database. Requires manual secondary document verification.",
       icon: ShieldAlert,
       time: "1 hour ago"
     }

@@ -4,11 +4,11 @@ import { Download, Search, Filter, Calendar } from "lucide-react";
 
 export function AgentPastSessions() {
   const pastSessions = [
-    { id: "1092-ZX", name: "Alice Johnson", date: "Oct 24, 2023", duration: "14m 20s", status: "Approved", risk: "Low" },
-    { id: "1091-QA", name: "Robert Smith", date: "Oct 24, 2023", duration: "08m 15s", status: "Rejected", risk: "High" },
-    { id: "1090-PL", name: "Maria Garcia", date: "Oct 23, 2023", duration: "11m 45s", status: "Manual Review", risk: "Medium" },
-    { id: "1089-MN", name: "James Wilson", date: "Oct 23, 2023", duration: "09m 30s", status: "Approved", risk: "Low" },
-    { id: "1088-KJ", name: "Patricia Brown", date: "Oct 22, 2023", duration: "15m 10s", status: "Approved", risk: "Low" },
+    { id: "1092-ZX", name: "Ananya Rao", date: "Oct 24, 2023", duration: "14m 20s", status: "Approved", risk: "Low" },
+    { id: "1091-QA", name: "Rahul Deshmukh", date: "Oct 24, 2023", duration: "08m 15s", status: "Rejected", risk: "High" },
+    { id: "1090-PL", name: "Sameer Khan", date: "Oct 23, 2023", duration: "11m 45s", status: "Manual Review", risk: "Medium" },
+    { id: "1089-MN", name: "Kavita Reddy", date: "Oct 23, 2023", duration: "09m 30s", status: "Approved", risk: "Low" },
+    { id: "1088-KJ", name: "Nitin Patil", date: "Oct 22, 2023", duration: "15m 10s", status: "Approved", risk: "Low" },
   ];
 
   return (

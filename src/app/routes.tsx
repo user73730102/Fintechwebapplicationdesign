@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter, Navigate } from "react-router";
 import { Landing } from "./screens/Landing";
-import { StandardApplication } from "./screens/StandardApp";
+import { CustomerOnboardingInfo } from "./screens/CustomerOnboardingInfo";
 import { CustomerVideo } from "./screens/CustomerVideo";
 import { CustomerProcessing } from "./screens/CustomerProcessing";
 import { CustomerResults } from "./screens/CustomerResults";
@@ -18,8 +18,8 @@ export const router = createBrowserRouter([
     Component: Landing,
   },
   {
-    path: "/standard-application",
-    Component: StandardApplication,
+    path: "/onboarding/info",
+    Component: CustomerOnboardingInfo,
   },
   {
     path: "/onboarding/video",

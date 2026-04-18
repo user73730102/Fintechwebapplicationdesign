@@ -24,10 +24,27 @@ export function CustomerVideo() {
     {
       id: 1,
       sender: "ai",
-      text: "Hello! I'm your AI onboarding assistant. Let's start by verifying your identity. Could you please show your ID to the camera and state your full name?",
+      text: "Namaste! I'm your AI onboarding assistant. Let's start by verifying your identity. Could you please show your Aadhaar card to the camera and state your full name?",
     },
   ]);
-  const [stage, setStage] = useState(0); // 0: init, 1: showing id, 2: processing
+  const [stage, setStage] = useState(0); // 0: init, 1: showing id, 2: captured/complete
+
+  // Simulate automatic ID capture after a few seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: Date.now(),
+          sender: "ai",
+          text: "I've successfully captured your Aadhaar details and verified your biometric data. Your profile is now complete. Feel free to end the session to submit your application.",
+        },
+      ]);
+      setStage(2);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSend = () => {
     if (!inputText.trim()) return;
@@ -38,23 +55,19 @@ export function CustomerVideo() {
     ]);
     setInputText("");
 
-    // Simulate AI response
-    setTimeout(() => {
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: Date.now() + 1,
-          sender: "ai",
-          text: "Thank you. I've captured that. We are now analyzing your document and profile.",
-        },
-      ]);
-      setStage(2);
-
-      // Auto-navigate to processing after a brief delay
+    // Simulate AI response if user chats
+    if (stage < 2) {
       setTimeout(() => {
-        navigate("/onboarding/processing");
-      }, 3000);
-    }, 1500);
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: Date.now() + 1,
+            sender: "ai",
+            text: "Thank you. I'm currently verifying your documents. Please keep your ID within the frame.",
+          },
+        ]);
+      }, 1000);
+    }
   };
 
   return (
@@ -92,7 +105,7 @@ export function CustomerVideo() {
               {stage === 2 && (
                 <div className="bg-emerald-500/20 text-emerald-400 backdrop-blur-md px-3 py-1.5 rounded-lg text-sm font-medium border border-emerald-500/20 flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4" />
-                  ID Captured
+                  Aadhaar Captured
                 </div>
               )}
             </div>
@@ -120,7 +133,7 @@ export function CustomerVideo() {
             </div>
 
             {/* Controls */}
-            <div className="absolute bottom-6 left-6 flex gap-3">
+            <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center">
               <Button
                 variant={isMuted ? "destructive" : "secondary"}
                 size="icon"
@@ -132,6 +145,19 @@ export function CustomerVideo() {
                 ) : (
                   <Mic className="w-5 h-5 text-white" />
                 )}
+              </Button>
+
+              <Button 
+                onClick={() => navigate("/onboarding/processing")}
+                disabled={stage < 2}
+                className={`px-6 gap-2 h-12 rounded-xl shadow-lg transition-all duration-500 ${
+                  stage === 2 
+                    ? "bg-emerald-600 hover:bg-emerald-700 text-white shadow-emerald-500/20" 
+                    : "bg-slate-800 text-slate-500 border border-slate-700 cursor-not-allowed opacity-50"
+                }`}
+              >
+                {stage === 2 ? <CheckCircle2 className="w-5 h-5" /> : <div className="w-5 h-5 border-2 border-slate-600 border-t-white rounded-full animate-spin" />}
+                End Session & Submit
               </Button>
             </div>
           </div>

@@ -45,13 +45,9 @@ export function Landing() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-            <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg rounded-full shadow-lg shadow-blue-600/20" onClick={() => navigate("/onboarding/video")}>
+            <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg rounded-full shadow-lg shadow-blue-600/20" onClick={() => navigate("/onboarding/info")}>
               <Video className="w-5 h-5 mr-2" />
-              Start Video Onboarding
-            </Button>
-            <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 px-8 text-lg rounded-full" onClick={() => navigate("/standard-application")}>
-              <FileText className="w-5 h-5 mr-2" />
-              Standard Application
+              Start Secure Onboarding
             </Button>
           </div>
 
